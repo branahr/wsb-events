@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @link              https://https://github.com/branahr
+ * @link              https://github.com/branahr
  * @since             1.0.0
  * @package           Wsb_Events
  *
  * @wordpress-plugin
  * Plugin Name:       WSB Events
- * Plugin URI:        https://https://github.com/branahr/wsb-events
+ * Plugin URI:        https://github.com/branahr/wsb-events
  * Description:       Simple Event Manager plugin for WordPress
  * Version:           1.0.0
  * Author:            Branko Borilovic
- * Author URI:        https://https://github.com/branahr/
+ * Author URI:        https://github.com/branahr/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wsb-events

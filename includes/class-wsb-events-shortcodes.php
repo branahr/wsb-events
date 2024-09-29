@@ -26,11 +26,12 @@ class Wsb_Events_Shortcodes {
 	 */
 	public static function init() {
 
-		add_shortcode( 'event_list', array( __CLASS__, 'wsb_events_display' ) );
+		add_shortcode( 'event_list', array( __CLASS__, 'wsb_events_list_display' ) );
+        add_shortcode( 'event_menu', array( __CLASS__, 'wsb_events_menu_display' ) );
 		
 	}
 	
-	public static function wsb_events_display($atts) {
+	public static function wsb_events_list_display($atts) {
 		
 		/*
 		 * Shortcode attributes with default values defined
@@ -87,6 +88,56 @@ class Wsb_Events_Shortcodes {
 
 	}
 
-	
+    /**
+     * Display a list of events as a menu with links to the event pages
+     */
+    public static function wsb_events_menu_display($atts) {
+        
+        /*
+         * Shortcode attributes with default values defined
+         */
+        $a = shortcode_atts( array( 
+            'show_title'	  => 'true',
+            'sorting'         => 'ASC',
+        ), $atts, 'event_menu' );
+
+        $today = date('Ymd');
+        $args = array(
+            'post_type'      => 'event',
+            'posts_per_page' => -1,
+            'meta_query'     => array(
+                array(
+                    'key'     => '_wsb_events_event_date',
+                    'value'   => $today,
+                    'compare' => '>=',
+                    'type'    => 'DATE',
+                ),
+            ),
+            'orderby'        => 'meta_value',
+            'order'          => $a['sorting'],
+        );
+    
+        $events = new WP_Query($args);
+        ob_start();
+        $show_title = filter_var($a['show_title'], FILTER_VALIDATE_BOOLEAN);
+        if ($show_title){
+            echo '<h3>' . __('Upcoming Events', 'wsb-events') . '</h3>';
+        }
+        if ($events->have_posts()) {
+            echo '<ul class="wsb-event-menu">';
+            while ($events->have_posts()) {
+                $events->the_post();
+                $event_date = get_post_meta(get_the_ID(), '_wsb_events_event_date', true);
+                $event_location = get_post_meta(get_the_ID(), '_wsb_events_event_location', true);
+                echo '<li>';
+                echo '<a href="' . get_permalink() . '">';
+                echo '<span>' . get_the_title() . '</span>';
+                echo '</a>';
+                echo '</li>';
+            }
+            echo '</ul>';
+        }
+
+    }
 
 }
