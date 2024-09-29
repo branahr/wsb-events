@@ -25,6 +25,7 @@ WSB Event Manager allows you to create and manage events through a custom post t
 - Events sorted by date
 - Compatible with the Twenty Twenty-One theme
 - Option to display event archives and integrate them into WordPress menus
+- Custom fields "Event Title" and "Event Date" added to admin dashboard list of events. "Event Date" field is sortable.
 
 ## Installation
 
@@ -34,7 +35,7 @@ To install the plugin, follow these steps:
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. To display events with dates, locations and descriptions use the `[event_list]` shortcode on any page or post.
 4. Optionally, add the event archive page to the menu from the WordPress menu settings under "Events".
-5. To display events as menu without details, use the `[event_menu]` shortcode in sidebar or other widget area
+5. To display events as menu items without details, use the `[event_menu]` shortcode in sidebar or other widget area
 
 ## Frequently Asked Questions
 
@@ -58,6 +59,11 @@ You can use additional parameters:
 
 Example 1: `[event_list show_title="false"]` will show upcoming events with details (name, date, location, description) without "Upcoming Events" title above
 Example 2: `[event_menu sorting="desc"]` will show list of links and names of events sorted by date descending, with "Upcoming Events" title above
+
+### Can I add event link to existing menu through menu manager?
+
+Yes, you can choose "All events" or any single event when adding to menu. If "Events" option is not visible on the left side of menu manager,
+you will need to check "Events" option in "Screen Options" at the top of the page.
 
 ## Changelog
 
