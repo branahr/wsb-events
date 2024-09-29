@@ -1,0 +1,57 @@
+.event-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.event-list li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 15px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.wsb-event-meta {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.wsb-event-date {
+    margin: auto;
+    margin-left: 0;
+    background-color: #333;
+    color: #d1e4dd;
+    padding: 0 10px;
+    border-radius: 3px;
+    display: flex;
+}
+
+.wsb-event-date .dashicons {
+    font-size: 20px;
+    margin: auto;
+    margin-right: 5px;
+}
+
+.wsb-event-location {
+    margin: auto;
+    margin-right: 0;
+    padding: 0 10px;
+    border-radius: 3px;
+    border: 2px solid #d1e4dd;
+}
+.event-list h3 {
+    font-size: 20px;
+    color: #2da77a;
+    border-bottom: 2px solid #d1e4dd;
+    margin-bottom: 10px;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+}
+
+.event-list p {
+    font-size: 16px;
+    color: #666;
+}
