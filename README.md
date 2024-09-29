@@ -57,8 +57,8 @@ You can use additional parameters:
 - **show_title**: `true`/`false` (default: `true`) - Displays "Upcoming Events" title at the top of the list of events.
 - **sorting**: `asc`/`desc` (default: `asc`) - Sets the direction of sorting events by date.
 
-Example 1: `[event_list show_title="false"]` will show upcoming events with details (name, date, location, description) without "Upcoming Events" title above
-Example 2: `[event_menu sorting="desc"]` will show list of links and names of events sorted by date descending, with "Upcoming Events" title above
+- **Example 1**: `[event_list show_title="false"]` will show upcoming events with details (name, date, location, description) without "Upcoming Events" title above
+- **Example 2**: `[event_menu sorting="desc"]` will show list of links and names of events sorted by date descending, with "Upcoming Events" title above
 
 ### Can I add event link to existing menu through menu manager?
 
