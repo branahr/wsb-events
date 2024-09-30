@@ -95,15 +95,14 @@ This will display upcoming events as menu items without details (names only).
 
 You can modify the behavior of both event shortcodes by using the following attributes:
 
-    - **show_title:** This attribute controls whether or not the heading "Upcoming Events" is displayed above the list.
+- **show_title:** This attribute controls whether or not the heading "Upcoming Events" is displayed above the list.
 
-        - **Options:** true (default), false
-        - **Example:** [event_list show_title="false"]
+  - **Options:** true (default), false
+  - **Example:** [event_list show_title="false"]
 
-    - **sorting:** This attribute controls the order in which events are displayed, based on the event date.
-
-        - **Options:** true (default), false
-        - **Example:** [event_menu sorting="desc"]
+- **sorting:** This attribute controls the order in which events are displayed, based on the event date.
+  - **Options:** true (default), false
+  - **Example:** [event_menu sorting="desc"]
 
     Combined Example:
     To display a list of events without the title and in descending order, use:
@@ -117,10 +116,10 @@ The plugin also creates an archive for events. You can customize the slug for ev
 
 To add an event archive to the site’s navigation menu:
 
-    - Go to Appearance > Menus in the WordPress admin dashboard.
-    - Select the Events custom post type archive from the available items and add it to your desired menu.
-    - Save the menu.
-    
+- Go to Appearance > Menus in the WordPress admin dashboard.
+- Select the Events custom post type archive from the available items and add it to your desired menu.
+- Save the menu.
+
 This will create a direct link to the archive page where users can browse all published events.
 
 ## Frequently Asked Questions
