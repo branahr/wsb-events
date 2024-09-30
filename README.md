@@ -28,13 +28,100 @@ WSB Event Manager allows you to create and manage events through a custom post t
 
 ## Installation
 
-To install the plugin, follow these steps:
+You can install the plugin in two different ways: **Direct Upload via wp-admin** or **Manual Upload**.
 
-1. Upload the content of the plugin folder to the `/wp-content/plugins/wsb-events/` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. To display events with dates, locations and descriptions use the `[event_list]` shortcode on any page or post.
-4. Optionally, add the event archive page to the menu from the WordPress menu settings under "Events".
-5. To display events as menu items without details, use the `[event_menu]` shortcode in sidebar or other widget area
+### Method 1: Install via WordPress Admin (Upload `.zip` file)
+
+1. **Download the Plugin as a ZIP File**:
+   - Click on the **Code** button at the top of this repository.
+   - Select **Download ZIP** to download the plugin files to your local computer.
+
+2. **Log into WordPress Admin**:
+   - Go to your WordPress dashboard (`yourdomain.com/wp-admin`).
+
+3. **Go to Plugins > Add New**:
+   - In the sidebar, navigate to **Plugins** > **Add New**.
+
+4. **Upload the Plugin**:
+   - At the top of the page, click the **Upload Plugin** button.
+   - Click the **Choose File** button and select the ZIP file you downloaded (`wsb-events.zip`).
+   - Click **Install Now**.
+
+5. **Activate the Plugin**:
+   - Once the installation is complete, click the **Activate Plugin** button.
+
+### Method 2: Manual Installation via FTP
+
+1. **Download the Plugin**: 
+   - Download the plugin files as a ZIP file.
+
+2. **Upload the Plugin**:
+   - Navigate to your WordPress installation directory.
+   - Extract the ZIP file and upload the plugin folder (`wsb-events`) to the `/wp-content/plugins/` directory using an FTP client.
+
+3. **Activate the Plugin**:
+   - Log in to your WordPress admin panel.
+   - Go to **Plugins** > **Installed Plugins**.
+   - Find the **Movie Popup Banner** plugin and click **Activate**.
+
+## Usage
+
+After installing and activating the WSB Event Manager plugin, you can manage and display events in the following ways:
+
+### Creating an Event
+
+1. In the WordPress admin dashboard, navigate to the **Events** section on the sidebar.
+2. Click **Add New** to create a new event.
+3. Fill in the following fields:
+   - **Event Title**: The name of your event.
+   - **Event Description**: A detailed description of your event.
+   - **Event Date**: The date and time of your event.
+   - **Event Location**: The location or venue where the event will take place.
+4. Once the event details are filled in, click **Publish** to make the event live.
+
+### Displaying Events
+
+To display a list of upcoming events on the front end of your site, use the `[event_list]` shortcode in a post or page. The shortcode will automatically display events sorted by date, with the most recent event at the top.
+
+#### Shortcode Example
+
+[event_list]
+This will display a list of all upcoming events with the default settings.
+
+[event_menu]
+This will display upcoming events as menu items without details (names only).
+
+### Shortcode Attributes
+
+You can modify the behavior of both event shortcodes by using the following attributes:
+
+    - **show_title:** This attribute controls whether or not the heading "Upcoming Events" is displayed above the list.
+
+        - **Options:** true (default), false
+        - **Example:** [event_list show_title="false"]
+
+    - **sorting:** This attribute controls the order in which events are displayed, based on the event date.
+
+        - **Options:** true (default), false
+        - **Example:** [event_menu sorting="desc"]
+
+    Combined Example:
+    To display a list of events without the title and in descending order, use:
+    [event_list show_title="false" sorting="desc"]
+
+### Event Archives
+
+The plugin also creates an archive for events. You can customize the slug for event archives via the rewrite parameter in the plugin code.
+
+#### Adding Event Archive to Menu
+
+To add an event archive to the site’s navigation menu:
+
+    - Go to Appearance > Menus in the WordPress admin dashboard.
+    - Select the Events custom post type archive from the available items and add it to your desired menu.
+    - Save the menu.
+    
+This will create a direct link to the archive page where users can browse all published events.
 
 ## Frequently Asked Questions
 
